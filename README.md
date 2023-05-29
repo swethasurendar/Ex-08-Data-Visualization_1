@@ -1,4 +1,4 @@
-# Ex-08-Data-Visualization-
+# Ex-09-Data-Visualization-
 
 ## AIM
 To Perform Data Visualization on a complex dataset and save the data to a file. 
@@ -18,5 +18,141 @@ Apply data visualization techniques to identify the patterns of the data.
 
 
 # CODE
+```
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the tips dataset
+tips = sns.load_dataset('tips')
+
+# Drop rows with all missing values
+tips.dropna(how='all', inplace=True)
+sns.barplot(x='day', y='total_bill', data=tips)
+plt.show()
+
+# a) Which day of the week has the highest total bill amount?
+
+# Group by day and sum total_bill
+total_bill_by_day = tips.groupby('day')['total_bill'].sum()
+
+# Sort by descending order and select the first row
+highest_total_bill_day = total_bill_by_day.sort_values(ascending=False).index[0]
+
+print("The day with the highest total bill amount is:", highest_total_bill_day)
+
+# b) What is the average tip amount given by smokers and non-smokers?
+
+sns.barplot(x='smoker', y='tip', data=tips)
+plt.show()
+
+# Group by smoker and calculate mean of tip
+tip_by_smoker = tips.groupby('smoker')['tip'].mean()
+
+print("Average tip amount given by smokers:", tip_by_smoker['Yes'])
+print("Average tip amount given by non-smokers:", tip_by_smoker['No'])
+
+# c) How does the tip percentage vary based on the size of the dining party?
+
+tips['tip_percentage'] = tips['tip'] / tips['total_bill'] * 100
+sns.pointplot(x='size', y='tip_percentage', data=tips)
+plt.show()
+
+# Create a new column for tip percentage
+tips['tip_percentage'] = tips['tip'] / tips['total_bill']
+
+# Group by size and calculate mean of tip percentage
+tip_percentage_by_size = tips.groupby('size')['tip_percentage'].mean()
+
+print("Tip percentage by size of dining party:")
+print(tip_percentage_by_size)
+
+# d) Which gender tends to leave higher tips?
+
+sns.boxplot(x='sex', y='tip', data=tips)
+plt.show()
+
+# Group by gender and calculate mean of tip
+tip_by_gender = tips.groupby('sex')['tip'].mean()
+
+print("Average tip amount by gender:")
+print(tip_by_gender)
+
+# e) Is there any relationship between the total bill amount and the day of the week?
+
+sns.scatterplot(x='total_bill', y='day', data=tips)
+plt.show()
+
+# f) How does the distribution of total bill amounts vary across different time periods (lunch vs. dinner)?
+
+sns.boxplot(x='time', y='total_bill', data=tips)
+plt.show()
+
+# g) Which dining party size group tends to have the highest average total bill amount?
+
+sns.barplot(x='size', y='total_bill', data=tips)
+plt.show()
+
+# Group by size and calculate mean of total_bill
+total_bill_by_size = tips.groupby('size')['total_bill'].mean()
+
+print("Average total bill amount by size of dining party:")
+print(total_bill_by_size)
+
+# h) What is the distribution of tip amounts for each day of the week?
+
+sns.boxplot(x='day', y='tip', data=tips)
+plt.show()
+
+# i) How does the tip amount vary based on the type of service (lunch vs. dinner)?
+
+sns.boxplot(x='time', y='tip', data=tips)
+plt.show()
+
+# j) Is there any correlation between the total bill amount and the tip amount?
+sns.scatterplot(x='total_bill', y='tip', data=tips)
+plt.show()
+correlation = tips['total_bill'].corr(tips['tip'])
+print("Correlation coefficient between total_bill and tip:", correlation)
+```
 
 # OUPUT
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/e6138d85-5885-4163-8a37-b8fb32410af0)
+The day with the highest total bill amount is: Sat
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/305eb206-9228-4b7a-9c37-bacd8063e287)
+Average tip amount given by smokers: 3.008709677419355
+Average tip amount given by non-smokers: 2.9918543046357615
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/ca4b7472-51cf-4001-983c-ba9e7086d426)
+Tip percentage by size of dining party:
+size
+1    0.217292
+2    0.165719
+3    0.152157
+4    0.145949
+5    0.141495
+6    0.156229
+Name: tip_percentage, dtype: float64
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/7f146d54-6c27-45df-bcf2-92c400ded455)
+Average tip amount by gender:
+sex
+Male      3.089618
+Female    2.833448
+Name: tip, dtype: float64
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/46827368-5aeb-4266-810d-57abae99a47b)
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/9362aa1f-7353-4845-94a2-7a62aab1a45e)
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/a45431a5-bf46-46bb-a8c8-82916ae00892)
+Average total bill amount by size of dining party:
+size
+1     7.242500
+2    16.448013
+3    23.277632
+4    28.613514
+5    30.068000
+6    34.830000
+Name: total_bill, dtype: float64
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/c3f6d2d2-0d1f-42ab-9617-f772cd41a159)
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/d868a2e6-5fc9-4ffd-8458-739827fc9581)
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/dba7e87b-9f87-4f00-8f91-020b4de007de)
+Correlation coefficient between total_bill and tip: 0.6757341092113641
+
+# RESULT
+Thus, Data Visualization on a complex dataset and save the data to a file has been performed successfully.
