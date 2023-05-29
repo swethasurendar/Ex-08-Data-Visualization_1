@@ -116,12 +116,18 @@ print("Correlation coefficient between total_bill and tip:", correlation)
 ```
 
 # OUPUT
-![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/e6138d85-5885-4163-8a37-b8fb32410af0)
+![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/e6138d85-5885-4163-8a37-b8fb32410af0) 
+
 The day with the highest total bill amount is: Sat
+
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/305eb206-9228-4b7a-9c37-bacd8063e287)
+
 Average tip amount given by smokers: 3.008709677419355
+
 Average tip amount given by non-smokers: 2.9918543046357615
+
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/ca4b7472-51cf-4001-983c-ba9e7086d426)
+
 Tip percentage by size of dining party:
 size
 1    0.217292
@@ -131,15 +137,19 @@ size
 5    0.141495
 6    0.156229
 Name: tip_percentage, dtype: float64
+
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/7f146d54-6c27-45df-bcf2-92c400ded455)
+
 Average tip amount by gender:
 sex
 Male      3.089618
 Female    2.833448
 Name: tip, dtype: float64
+
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/46827368-5aeb-4266-810d-57abae99a47b)
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/9362aa1f-7353-4845-94a2-7a62aab1a45e)
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/a45431a5-bf46-46bb-a8c8-82916ae00892)
+
 Average total bill amount by size of dining party:
 size
 1     7.242500
@@ -149,9 +159,11 @@ size
 5    30.068000
 6    34.830000
 Name: total_bill, dtype: float64
+
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/c3f6d2d2-0d1f-42ab-9617-f772cd41a159)
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/d868a2e6-5fc9-4ffd-8458-739827fc9581)
 ![image](https://github.com/swethasurendar/Ex-08-Data-Visualization_1/assets/133625914/dba7e87b-9f87-4f00-8f91-020b4de007de)
+
 Correlation coefficient between total_bill and tip: 0.6757341092113641
 
 # RESULT
